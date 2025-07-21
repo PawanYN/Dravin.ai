@@ -1,0 +1,27 @@
+# Ignore Python artifacts and environments
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+**/venv/
+**/.venv/
+**/myenv/
+*.pydvenv/           # This looks like a typo — if not needed, remove
+
+# Ignore dotenv and log files
+.env
+*.log
+*.log.*
+
+# Ignore IDE/config folders
+.vscode/
+.idea/
+
+# Ignore build or result folders
+instance/
+results/
+openrouter/
+
+my_website/venv/

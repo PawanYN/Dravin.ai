@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.container {
+    background: #e3f2fd;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.right {
+    width: 100%;
+    background: #fafafa;
+    padding: 2rem;
+}
+
+.language-switcher {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.language-switcher label {
+    font-size: 0.9rem;
+    margin-right: 10px;
+    color: #555;
+}
+
+.language-switcher select {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #b0bec5;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.language-switcher select:focus {
+    outline: none;
+    border-color: #1976d2;
+}
+
+.header-image {
+    height: 200px;
+    background-image: url('../images/wallpaper_bk.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 1rem;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+h1#main-heading {
+    font-size: 1.8rem;
+    color: #1976d2;
+}
+
+h2#title span {
+    background: rgba(25, 118, 210, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+p#description span {
+    background: rgba(25, 118, 210, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #555;
+}
+
+.text-center {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-set {
+    position: relative;
+}
+
+.form-set label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #333;
+}
+
+.form-control, .input-textarea {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    background: #ffffff;
+    border: 1px solid #b0bec5;
+    border-radius: 8px;
+    color: #333;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .input-textarea:focus {
+    border-color: #1976d2;
+    background: #ffffff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(25, 118, 210, 0.2);
+}
+
+.form-control::placeholder, .input-textarea::placeholder {
+    color: #78909c;
+}
+
+.input-textarea {
+    height: 120px;
+    resize: none;
+    padding: 10px;
+}
+
+.form-set i {
+    position: absolute;
+    left: 10px;
+    top: 38px;
+    color: #78909c;
+    font-size: 1rem;
+}
+
+#textarea-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#textarea-label i {
+    position: static;
+    color: #78909c;
+    font-size: 1rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #1976d2;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #42a5f5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 165, 245, 0.3);
+}
+
+#otherCenterDiv {
+    margin-top: 10px;
+}
+
+#otherCenterDiv input {
+    padding-left: 35px;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 90%;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .language-switcher {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .header-image {
+        height: 150px;
+    }
+
+    h1#main-heading {
+        font-size: 1.5rem;
+    }
+
+    h2#title {
+        font-size: 1.2rem;
+    }
+
+    .form-set i {
+        top: 36px;
+    }
+}

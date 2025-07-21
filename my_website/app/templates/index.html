@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BK Seva - Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to BK Seva</h1>
+        <p>Select your role:</p>
+        <div class="button-container">
+            <a href="/admin">
+                <button>Admin</button>
+            </a>
+            <a href="/register">
+                <button>User</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

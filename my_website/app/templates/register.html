@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bhagavat Kathamrtam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        window.onload = function () {
+            if (window.location.search.includes('payment_id')) {
+                const urlWithoutParams = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, urlWithoutParams);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div class="right">
+            <div class="language-switcher">
+                <label for="language-select">Language: </label>
+                <select id="language-select" onchange="switchLanguage()">
+                    <option value="en" selected>English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ben">Bengali</option>
+                </select>
+            </div>
+            <div class="header-image"></div>
+            <div class="title-header">
+                <h1 id="main-heading" class="text-center">Bhagavat Kathamrita Registration Form Online</h1>
+                <h2 id="title" class="text-center"><span>Register for Bhāgavata Kathāmṛtam</span></h2>
+                <p id="description" class="description text-center"><span>Please fill up the form with the necessary details</span></p>
+            </div>
+            <form id="survey-form" action="{{ url_for('main.register') }}" method="POST">
+                <div class="form-set">
+                    <label id="first-name-label" for="first-name"><i class="fas fa-user"></i> First Name</label>
+                    <input
+                            type="text"
+                            name="first_name"
+                            id="first-name"
+                            class="form-control"
+                            placeholder="Enter your first name"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="last-name-label" for="last-name"><i class="fas fa-user"></i> Last Name</label>
+                    <input
+                            type="text"
+                            name="last_name"
+                            id="last-name"
+                            class="form-control"
+                            placeholder="Enter your last name"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="email-label" for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                    <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Enter your e-mail"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="phone-num-label" for="phone-number"><i class="fas fa-phone"></i> WhatsApp Number (or Phone Number)</label>
+                    <input
+                            type="tel"
+                            name="phone"
+                            pattern="[6-9][0-9]{9}"
+                            id="phone-number"
+                            title="Enter a valid 10-digit Indian mobile number"
+                            class="form-control"
+                            placeholder="Enter your number"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="number-label" for="number"><i class="fas fa-child"></i> Age</label>
+                    <input
+                            type="number"
+                            name="age"
+                            id="number"
+                            min="2"
+                            max="150"
+                            class="form-control"
+                            placeholder="Age"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="preacher-label" for="preacher-input"><i class="fas fa-user-tie"></i> Preacher/Counsellor</label>
+                    <input
+                            type="text"
+                            name="preacher"
+                            id="preacher-input"
+                            class="form-control"
+                            placeholder="Enter your preacher/counsellor"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="drop-label" for="center"><i class="fas fa-map-marker-alt"></i> Center</label>
+                    <select id="center" name="center" class="form-control" required onchange="showOtherField(this)">
+                        <option disabled selected value>Select center</option>
+                        <option value="iskcon_kolkata">ISKCON Kolkata (Albert Road)</option>
+                        <option value="iskcon_newtown">ISKCON Newtown</option>
+                        <option value="gita_study_course">Gita Study Course</option>
+                        <option value="namhatta">Namhatta</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+
+                <div id="otherCenterDiv" style="display:none; margin-top: 10px;">
+                    <label for="otherCenter"><i class="fas fa-comment-alt"></i> Please specify:</label>
+                    <input type="text" id="otherCenter" name="center" class="form-control">
+                </div>
+
+                <div class="form-set">
+                    <label id="textarea-label" for="comments"><i class="fas fa-comments"></i> Any comments, suggestions, or questions on Bhagavat Kathamritam?</label>
+                    <textarea
+                            id="comments"
+                            class="input-textarea"
+                            name="message"
+                            placeholder="Enter your comment here..."></textarea>
+                </div>
+
+                <div class="form-set">
+                    <button type="submit" id="submit" class="submit-button">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showOtherField(select) {
+        const otherDiv = document.getElementById("otherCenterDiv");
+        const otherCenter = document.getElementById('otherCenter');
+        if (select.value === "others") {
+            otherDiv.style.display = "block";
+            otherCenter.setAttribute("required", "required");
+        } else {
+            otherDiv.style.display = "none";
+            otherCenter.removeAttribute("required");
+        }
+    }
+
+    function switchLanguage() {
+        const select = document.getElementById('language-select');
+        const language = select.value;
+        if (language === 'hi') {
+            window.location.href = '/register_hi';
+        } else if (language === 'ben') {
+            window.location.href = '/register_ben';
+        } else {
+            window.location.href = '/register';
+        }
+    }
+</script>
+</body>
+</html>

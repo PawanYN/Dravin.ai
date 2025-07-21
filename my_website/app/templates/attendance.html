@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bhagavat Kathamrita - Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/attendance.css') }}">
+</head>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div class="content">
+            <h1 class="text-center">Bhagavat Kathamrita</h1>
+            <p class="text-center message">
+                {% if success %}
+                    Attendance updated for user ID: {{ user_id }}.
+                {% else %}
+                    Failed to update attendance for user ID: {{ user_id }}.
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    // Close the window immediately after loading
+    window.location.href = "{{ url_for('main.self_close') }}";
+</script>
+</body>
+</html>
+</body>
+</html>

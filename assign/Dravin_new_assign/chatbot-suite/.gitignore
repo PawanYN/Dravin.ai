@@ -1,0 +1,22 @@
+# === Backend ===
+backend/__pycache__/
+backend/**/__pycache__/
+backend/log/
+backend/.env
+backend/.venv
+# === Frontend ===
+frontend/.dockerignore
+
+# === Project Root ===
+compose.yaml
+inf.txt
+
+# === Common Extras ===
+*.log
+*.db
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.bak

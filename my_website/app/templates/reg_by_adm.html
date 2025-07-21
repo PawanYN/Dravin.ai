@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register Devotee</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c3e50;
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%; /* Ensure navbar spans full width */
+        }
+
+        .navbar .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px; /* Constrain content width */
+            margin: 0 auto; /* Center content */
+            width: 100%; /* Ensure container uses full available width */
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #34495e;
+            border-radius: 5px;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #2c3e50;
+                padding: 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li a {
+                padding: 10px;
+                font-size: 18px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #005f73;
+            margin: 1rem 0;
+        }
+
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 400px;
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: auto 0;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input, select {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #005f73;
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0a9396;
+        }
+
+        .message {
+            margin-top: 1rem;
+            color: green;
+            font-weight: 600;
+        }
+
+        .error {
+            color: red;
+        }
+
+        a.back-link {
+            margin-top: 1rem;
+            text-decoration: none;
+            color: #005f73;
+            font-weight: 600;
+        }
+
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Admin Panel</a>
+            <span class="menu-toggle">☰</span>
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/pending_requests">Pending Requests</a></li>
+                <li><a href="/adm_register">Register Devotee</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <h1>Register Devotee</h1>
+    <form method="post" action="/adm_register" id="registerForm">
+        <label id="first-name-label" for="first-name">First Name</label>
+        <input
+            type="text"
+            name="first_name"
+            id="first-name"
+            class="form-control"
+            placeholder="Enter your first name"
+            required/>
+
+        <label id="last-name-label" for="last-name">Last Name</label>
+        <input
+            type="text"
+            name="last_name"
+            id="last-name"
+            class="form-control"
+            placeholder="Enter your last name"
+            required/>
+
+        <label id="email-label" for="email">E-mail</label>
+        <input
+            type="email"
+            name="email"
+            id="email"
+            class="form-control"
+            placeholder="Enter your e-mail"
+            required/>
+
+        <label id="phone-num-label" for="phone-number">WhatsApp Number (or Phone Number)</label>
+        <input
+            type="tel"
+            name="phone"
+            pattern="[6-9][0-9]{9}"
+            id="phone-number"
+            title="Enter a valid 10-digit Indian mobile number"
+            class="form-control"
+            placeholder="Enter your number"
+            required/>
+
+        <label id="number-label" for="number">Age<span class="clue"> </span></label>
+        <input
+            type="number"
+            name="age"
+            id="number"
+            min="2"
+            max="150"
+            class="form-control"
+            placeholder="Age"
+            required/>
+
+        <label id="preacher-label" for="preacher-input">Preacher/Counsellor</label>
+        <input
+            type="text"
+            name="preacher"
+            id="preacher-input"
+            class="form-control"
+            placeholder="Enter your preacher/counsellor"
+            required/>
+
+        <input type="hidden" id="confirmed" name="confirmed" value="">
+
+        <label for="center">Center:</label>
+        <select name="center" id="center" required onchange="showOtherField(this)">
+            <option value="" disabled selected>Select Center</option>
+            <option value="iskcon_kolkata">ISKCON Kolkata (Albert Road)</option>
+            <option value="iskcon_newtown">ISKCON Newtown</option>
+            <option value="gita_study_course">Gita Study Course</option>
+            <option value="namhatta">Namhatta</option>
+            <option value="others">Others</option>
+        </select>
+        <div id="otherCenterDiv" style="display:none; margin-top: 10px;">
+            <label for="otherCenter">Please specify:</label>
+            <input type="text" id="otherCenter" name="other_center">
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        function showOtherField(select) {
+            var otherDiv = document.getElementById("otherCenterDiv");
+            var other_center = document.getElementById('otherCenter');
+            if (select.value === "others") {
+                otherDiv.style.display = "block";
+                other_center.setAttribute("required", "required");
+            } else {
+                otherDiv.style.display = "none";
+                other_center.removeAttribute("required");
+            }
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const confirmed = confirm("Has the admin confirmed offline payment?");
+            if (confirmed) {
+                document.getElementById('confirmed').value = "yes";
+            } else {
+                document.getElementById('confirmed').value = "";
+            }
+            this.submit();
+        });
+    </script>
+
+    {% if message %}
+    <script>
+        alert("{{ message }}");
+    </script>
+    {% endif %}
+</body>
+</html>

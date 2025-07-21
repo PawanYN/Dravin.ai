@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>भागवत कथामृत</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        window.onload = function () {
+            if (window.location.search.includes('payment_id')) {
+                const urlWithoutParams = window.location.origin + window.location.pathname;
+                window.history.replaceState({}, document.title, urlWithoutParams);
+            }
+        };
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div class="right">
+            <div class="language-switcher">
+                <label for="language-select">भाषा: </label>
+                <select id="language-select" onchange="switchLanguage()">
+                    <option value="en">अंग्रेजी</option>
+                    <option value="hi" selected>हिंदी</option>
+                    <option value="ben">बंगाली</option>
+                </select>
+            </div>
+            <div class="header-image"></div>
+            <div class="title-header">
+                <h1 id="main-heading" class="text-center">भागवत कथामृतम पंजीकरण फॉर्म ऑनलाइन</h1>
+                <h2 id="title" class="text-center"><span>भागवत कथामृत के लिए पंजीकरण करें</span></h2>
+                <p id="description" class="description text-center"><span>कृपया आवश्यक विवरण के साथ फॉर्म भरें</span></p>
+            </div>
+            <form id="survey-form" action="{{ url_for('main.register') }}" method="POST">
+                <div class="form-set">
+                    <label id="first-name-label" for="first-name"><i class="fas fa-user"></i> पहला नाम</label>
+                    <input
+                            type="text"
+                            name="first_name"
+                            id="first-name"
+                            class="form-control"
+                            placeholder="अपना पहला नाम दर्ज करें"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="last-name-label" for="last-name"><i class="fas fa-user"></i> अंतिम नाम</label>
+                    <input
+                            type="text"
+                            name="last_name"
+                            id="last-name"
+                            class="form-control"
+                            placeholder="अपना अंतिम नाम दर्ज करें"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="email-label" for="email"><i class="fas fa-envelope"></i> ई-मेल</label>
+                    <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="अपना ई-मेल दर्ज करें"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="phone-num-label" for="phone-number"><i class="fas fa-phone"></i> व्हाट्सएप नंबर (या फ़ोन नंबर)</label>
+                    <input
+                            type="tel"
+                            name="phone"
+                            pattern="[6-9][0-9]{9}"
+                            id="phone-number"
+                            title="10 अंकों का भारतीय मोबाइल नंबर दर्ज करें"
+                            class="form-control"
+                            placeholder="अपना नंबर दर्ज करें"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="number-label" for="number"><i class="fas fa-child"></i> आयु</label>
+                    <input
+                            type="number"
+                            name="age"
+                            id="number"
+                            min="2"
+                            max="150"
+                            class="form-control"
+                            placeholder="आयु"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="preacher-label" for="preacher-input"><i class="fas fa-user-tie"></i> उपदेशक/काउंसलर</label>
+                    <input
+                            type="text"
+                            name="preacher"
+                            id="preacher-input"
+                            class="form-control"
+                            placeholder="अपने उपदेशक/काउंसलर का नाम दर्ज करें"
+                            required/>
+                </div>
+
+                <div class="form-set">
+                    <label id="drop-label" for="center"><i class="fas fa-map-marker-alt"></i> केंद्र</label>
+                    <select id="center" name="center" class="form-control" required onchange="showOtherField(this)">
+                        <option disabled selected value>केंद्र चुनें</option>
+                        <option value="iskcon_kolkata">इस्कॉन कोलकाता (अल्बर्ट रोड)</option>
+                        <option value="iskcon_newtown">इस्कॉन न्यूटाउन</option>
+                        <option value="gita_study_course">गीता अध्ययन पाठ्यक्रम</option>
+                        <option value="namhatta">नामहट्ट</option>
+                        <option value="others">अन्य</option>
+                    </select>
+                </div>
+
+                <div id="otherCenterDiv" style="display:none; margin-top: 10px;">
+                    <label for="otherCenter"><i class="fas fa-comment-alt"></i> कृपया निर्दिष्ट करें:</label>
+                    <input type="text" id="otherCenter" name="center" class="form-control">
+                </div>
+
+                <div class="form-set">
+                    <label id="textarea-label" for="comments"><i class="fas fa-comments"></i> भागवत कथामृत पर कोई टिप्पणी, सुझाव, प्रश्न?</label>
+                    <textarea
+                            id="comments"
+                            class="input-textarea"
+                            name="message"
+                            placeholder="यहाँ अपनी टिप्पणी लिखें..."></textarea>
+                </div>
+
+                <div class="form-set">
+                    <button type="submit" id="submit" class="submit-button">जमा करें</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showOtherField(select) {
+        const otherDiv = document.getElementById("otherCenterDiv");
+        const otherCenter = document.getElementById('otherCenter');
+        if (select.value === "others") {
+            otherDiv.style.display = "block";
+            otherCenter.setAttribute("required", "required");
+        } else {
+            otherDiv.style.display = "none";
+            otherCenter.removeAttribute("required");
+        }
+    }
+
+    function switchLanguage() {
+        const select = document.getElementById('language-select');
+        const language = select.value;
+        if (language === 'hi') {
+            window.location.href = '/register_hi';
+        } else if (language === 'ben') {
+            window.location.href = '/register_ben';
+        } else {
+            window.location.href = '/register';
+        }
+    }
+</script>
+</body>
+</html>
