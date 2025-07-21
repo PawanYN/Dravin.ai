@@ -2,3 +2,5 @@
 venv/
 __pycache__/
 *.txt
+temp.js
+/Create_model_response/Check_api_key.py
