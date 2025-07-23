@@ -8,7 +8,7 @@ from pathlib import Path
 API_key=os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(
-    base_url="https://openrouter.ai/api/v1", #endpoint
+    base_url="https://openrouter.ai/api/v1", #endpoint 
     api_key=API_key          #API key
 )
 
@@ -64,3 +64,4 @@ print(completion.choices[0].message.content)
 # - Web Development
 # - Teaching and mentoring
 # - Event Management and Organizing
+

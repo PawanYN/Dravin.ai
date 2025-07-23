@@ -1,6 +1,6 @@
 ## ✅ Summary
 
-#### 1)Reasoning + Function Calling
+#### 1)Reasoning + Function Calling     
 ---
 
 ##### **#How Model works in reasoning and function call - importance of it.**
@@ -40,3 +40,17 @@ Step	                What happens
 > 💡 Tip: Always include reasoning items when function/tool use is involved, to preserve model intelligence.
 
 
+##### 🔒Encrypted Content in OpenAI's Responses API
+
+- The **Responses API** allows us to send **encrypted content** inside prompts.
+- This lets us include **private or sensitive data** (like user IDs or app-specific info) without exposing it to OpenAI’s servers.
+- OpenAI **never stores** the encrypted content — it processes it once and discards it immediately.
+- This enables us to build **stateless applications**, where we don’t have to store previous messages on our servers.
+- We can send the **entire chat history** (including encrypted parts) with each request, and the model continues the conversation securely.
+- This is especially useful when handling **confidential user data** or building **secure client-side apps**.
+
+✅ **Benefit**: It helps us maintain **privacy, security, and conversation continuity** without storing session data.
+ 
+
+
+ 
