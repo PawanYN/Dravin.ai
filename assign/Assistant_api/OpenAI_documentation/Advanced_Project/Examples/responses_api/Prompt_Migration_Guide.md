@@ -195,24 +195,6 @@ class CritiqueIssue(BaseModel):
 - **Max Tokens**: 2000 (optimized for cost)
 - **Output Format**: Structured JSON with Pydantic validation
 
-## 🤝 Contributing
-
-### Development Guidelines
-1. Follow existing code structure and naming conventions
-2. Add docstrings to all new functions
-3. Include type hints for better maintainability
-4. Test with different prompt types and lengths
-
-### Code Standards
-- **Style**: Follow PEP 8 guidelines
-- **Documentation**: Comprehensive docstrings
-- **Error Handling**: Graceful failure with informative messages
-- **Modularity**: Keep functions focused and reusable
-
-## 📄 License & Usage
-
-This tool is designed for educational and development purposes. Ensure compliance with OpenAI's usage policies when using their APIs.
-
 ---
 
 **Part of the Responses API Project Collection**  
