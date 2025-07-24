@@ -136,9 +136,7 @@ Assistant_api/
 
 ## 🔗 Quick Navigation
 
-- 🔄 [Eval Driven System Design](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Eval_Driven_System_Design_README.md)
-- 🤖 [Multi-Agent Prompt Optimization](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Optimization_README.md)
-- 🔄 [Prompt Migration Guide](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Migration_Guide.md)
+- � [Responses API Projects](./OpenAI_documentation/Advanced_Project/Examples/responses_api/README.md)
 - 🧪 [Prompt Evaluator](./PromptEvaluator/)
 - 💬 [Chatbot](./chatbot/)
 - 🏋️ [Personal Trainer](./personal_trainer/)
