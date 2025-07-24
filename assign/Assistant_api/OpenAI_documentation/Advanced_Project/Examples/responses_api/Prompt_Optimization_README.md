@@ -205,33 +205,11 @@ export OPENAI_API_KEY="your-openrouter-api-key"
 - Unified interface for all optimization needs
 - Extensible architecture for new checkers
 
-## 🔮 Future Enhancements
-
-1. **Format Checker Implementation** - Complete the format validation agent
-2. **Rewriter Agents** - Implement automatic prompt and example rewriting
-3. **Web Interface** - Create a user-friendly web UI
-4. **Batch Processing** - Support for optimizing multiple prompts
-5. **Custom Rules** - Allow users to define custom validation rules
-
 ## 📝 Files Structure
 
 ```
 responses_api/
 ├── Optimize_Prompts.py                    # Main implementation
 ├── Prompt_Optimization_README.md          # This documentation
-└── examples/                              # Test cases and examples
 ```
 
-## 🤝 Contributing
-
-This project is part of the OpenAI Assistant API documentation examples. Contributions welcome for:
-- Additional test cases
-- New agent implementations
-- Performance optimizations
-- Documentation improvements
-
----
-
-**Built with**: Python 3.11+, OpenAI API, Pydantic, AsyncIO
-**License**: MIT
-**Status**: Active Development 🚧
