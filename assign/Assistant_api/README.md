@@ -175,7 +175,7 @@ Each project includes:
 
 ## 🔗 Quick Navigation
 
-- 🤖 [Multi-Agent Prompt Optimization](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Optimize_Prompts.py)
+- 🤖 [Multi-Agent Prompt Optimization](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Optimization_README.md)
 - 🔄 [Prompt Migration Guide](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Migration_Guide.md)
 - 🧪 [Prompt Evaluator](./PromptEvaluator/)
 - 💬 [Chatbot](./chatbot/)
