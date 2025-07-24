@@ -8,6 +8,7 @@ A comprehensive collection of OpenAI Assistant API projects, tools, and examples
 **Advanced OpenAI API implementations and migration guides**
 
 #### 📡 [Responses API Projects](./OpenAI_documentation/Advanced_Project/Examples/responses_api/)
+- **🔄 [Eval Driven System Design](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Eval_Driven_System_Design.py)** - Comprehensive framework for building AI systems from prototype to production
 - **🤖 [Multi-Agent Prompt Optimization](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Optimize_Prompts.py)** - Sophisticated multi-agent system for automatic prompt optimization
 - **🔄 [Prompt Migration Guide](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Migration_Guide.md)** - AI-powered prompt analysis and improvement tool
 
@@ -56,8 +57,20 @@ A comprehensive collection of OpenAI Assistant API projects, tools, and examples
 
 ## 🎯 Featured Projects
 
+### 🌟 **Eval Driven System Design**
+*Latest Addition - Complete Development Framework*
+
+A comprehensive framework for evaluation-driven development that:
+- 🔄 **Iterates from prototype to production** with automated improvement
+- 📊 **Multi-metric evaluation** (accuracy, quality, consistency)
+- 🚀 **Stage-based progression** through development lifecycle
+- 🤖 **AI-powered optimization** based on evaluation results
+- 📈 **Historical tracking** and performance analytics
+
+**Technologies:** Python 3.11+, OpenAI API, Pydantic, AsyncIO
+
 ### 🌟 **Multi-Agent Prompt Optimization**
-*Latest Addition - Advanced AI System*
+*Advanced AI System*
 
 A sophisticated multi-agent architecture that automatically:
 - 🔍 **Detects contradictions** in developer prompts
@@ -120,61 +133,10 @@ Assistant_api/
 └── threading/                     # Concurrent processing
 ```
 
-## 🎯 Use Cases
-
-### 🤖 **Multi-Agent Systems**
-- Prompt optimization and validation
-- Parallel AI processing
-- Complex workflow orchestration
-
-### 📊 **Analysis & Testing**
-- Prompt quality evaluation
-- Performance benchmarking
-- A/B testing frameworks
-
-### 💬 **Conversational AI**
-- Production chatbots
-- Specialized assistants
-- Interactive applications
-
-### 🔧 **Development Tools**
-- API migration utilities
-- Testing frameworks
-- Performance optimization
-
-## 🚀 Latest Updates
-
-- ✅ **Multi-Agent Prompt Optimization** - New sophisticated optimization system
-- ✅ **Enhanced Documentation** - Comprehensive guides and examples
-- ✅ **Improved Architecture** - Better project organization
-- 🔄 **Active Development** - Regular updates and improvements
-
-## 🤝 Contributing
-
-### Adding New Projects
-1. Create project directory with descriptive name
-2. Include comprehensive README.md
-3. Add requirements.txt for dependencies
-4. Update this main index
-5. Follow existing code standards
-
-### Code Standards
-- Include type hints and docstrings
-- Follow PEP 8 style guidelines
-- Add comprehensive error handling
-- Include example usage
-- Test with various inputs
-
-## 📚 Documentation
-
-Each project includes:
-- 📋 **README.md** - Project overview and setup
-- 🔧 **requirements.txt** - Dependencies
-- 💡 **Examples** - Usage demonstrations
-- 📊 **Documentation** - Detailed guides
 
 ## 🔗 Quick Navigation
 
+- 🔄 [Eval Driven System Design](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Eval_Driven_System_Design_README.md)
 - 🤖 [Multi-Agent Prompt Optimization](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Optimization_README.md)
 - 🔄 [Prompt Migration Guide](./OpenAI_documentation/Advanced_Project/Examples/responses_api/Prompt_Migration_Guide.md)
 - 🧪 [Prompt Evaluator](./PromptEvaluator/)
@@ -183,8 +145,3 @@ Each project includes:
 
 ---
 
-**🔧 Built with**: Python, OpenAI API, Modern AI Technologies
-**📄 License**: MIT
-**🚀 Status**: Active Development
-
-*Explore, learn, and build amazing AI applications!* 🌟
