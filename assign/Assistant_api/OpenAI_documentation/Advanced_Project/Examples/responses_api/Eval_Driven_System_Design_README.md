@@ -1,34 +1,44 @@
 # 🔄 Eval Driven System Design - From Prototype to Production
 
-A comprehensive framework for building AI systems using evaluation-driven development, progressing from initial prototypes to production-ready solutions with continuous monitoring and improvement.
+A comprehensive framework for building AI systems using evaluation-driven development, following OpenAI's cookbook methodology for creating production-grade autonomous systems that replace labor-intensive human workflows.
 
 ## 🎯 Overview
 
-This project demonstrates how to build robust AI systems by:
-- **Starting with simple prototypes** and iterating based on evaluation metrics
-- **Using automated evaluation** to guide development decisions
-- **Implementing continuous improvement** cycles
-- **Scaling from prototype to production** with confidence
+This project demonstrates the complete eval-driven development lifecycle by:
+- **Making evals the core process** to prevent poke-and-hope guesswork
+- **Starting with small, imperfect datasets** (realistic real-world scenario)
+- **Building incrementally** with business-aligned metrics
+- **Using eval scores** to power model improvements and guide development decisions
+- **Mapping evaluation metrics** directly to business impact and dollar value
 
-## 🏗️ Architecture
+## 🏗️ The 7-Stage Eval-Driven Development Process
 
-### Development Pipeline
+### Complete Project Lifecycle
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│  PROTOTYPE  │───▶│ DEVELOPMENT │───▶│   STAGING   │───▶│ PRODUCTION  │
-│             │    │             │    │             │    │             │
-│ • Basic     │    │ • Iterative │    │ • Load      │    │ • Monitor   │
-│   Eval      │    │   Improve   │    │   Testing   │    │ • Scale     │
-│ • Fast      │    │ • Metrics   │    │ • Validate  │    │ • Optimize  │
-│   Iterate   │    │   Driven    │    │ • Deploy    │    │ • Maintain  │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
-       │                   │                   │                   │
-       ▼                   ▼                   ▼                   ▼
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│ Basic Tests │    │ Full Eval   │    │ Stress Test │    │ Live Metrics│
-│ Quick Feedback│  │ Suite       │    │ Performance │    │ A/B Testing │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+1. UNDERSTAND PROBLEM    2. ASSEMBLE EXAMPLES    3. BUILD V0 SYSTEM
+   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+   │ • Interview │         │ • Small     │         │ • End-to-End│
+   │   Experts   │────────▶│   Dataset   │────────▶│   Skeleton  │
+   │ • Map Costs │         │ • Imperfect │         │ • Basic     │
+   │ • Define KPIs│         │   Labels    │         │   Prompts   │
+   └─────────────┘         └─────────────┘         └─────────────┘
+                                                           │
+4. LABEL & BUILD EVALS   5. MAP TO BUSINESS      6. PROGRESSIVE IMPROVE
+   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
+   │ • Expert    │         │ • Cost      │         │ • Eval-     │
+   │   Feedback  │◀────────│   Models    │◀────────│   Driven    │
+   │ • Ground    │         │ • ROI       │         │   Iteration │
+   │   Truth     │         │   Analysis  │         │ • Targeted  │
+   └─────────────┘         └─────────────┘         └─────────────┘
+                                                           │
+                           7. PRODUCTION QA                │
+                           ┌─────────────┐                 │
+                           │ • Live      │◀────────────────┘
+                           │   Monitoring│
+                           │ • Continuous│
+                           │   Learning  │
+                           └─────────────┘
 ```
 
 ### Core Components
