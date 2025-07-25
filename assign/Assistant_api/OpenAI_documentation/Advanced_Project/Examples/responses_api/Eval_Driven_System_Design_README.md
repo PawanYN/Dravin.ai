@@ -1,53 +1,50 @@
-# 🔄 Eval Driven System Design - From Prototype to Production
+# Eval-Driven Receipt Processing System
 
-A comprehensive framework for building AI systems using evaluation-driven development, following OpenAI's cookbook methodology for creating production-grade autonomous systems that replace labor-intensive human workflows.
+Personal reference for eval-driven development implementation following OpenAI cookbook methodology.
 
-## 🎯 Overview
+## Core Architecture
 
-This project demonstrates the complete eval-driven development lifecycle by:
-- **Making evals the core process** to prevent poke-and-hope guesswork
-- **Starting with small, imperfect datasets** (realistic real-world scenario)
-- **Building incrementally** with business-aligned metrics
-- **Using eval scores** to power model improvements and guide development decisions
-- **Mapping evaluation metrics** directly to business impact and dollar value
+**Pipeline**: Image → Structured Data → Business Decision → Auto-approve/Audit
 
-## 🏗️ The 7-Stage Eval-Driven Development Process
+**Evaluation**: Ground Truth → Graders → Metrics → Business Impact → Deploy Decision
 
-### Complete Project Lifecycle
+## Data Models
 
-```
-1. UNDERSTAND PROBLEM    2. ASSEMBLE EXAMPLES    3. BUILD V0 SYSTEM
-   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
-   │ • Interview │         │ • Small     │         │ • End-to-End│
-   │   Experts   │────────▶│   Dataset   │────────▶│   Skeleton  │
-   │ • Map Costs │         │ • Imperfect │         │ • Basic     │
-   │ • Define KPIs│         │   Labels    │         │   Prompts   │
-   └─────────────┘         └─────────────┘         └─────────────┘
-                                                           │
-4. LABEL & BUILD EVALS   5. MAP TO BUSINESS      6. PROGRESSIVE IMPROVE
-   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐
-   │ • Expert    │         │ • Cost      │         │ • Eval-     │
-   │   Feedback  │◀────────│   Models    │◀────────│   Driven    │
-   │ • Ground    │         │ • ROI       │         │   Iteration │
-   │   Truth     │         │   Analysis  │         │ • Targeted  │
-   └─────────────┘         └─────────────┘         └─────────────┘
-                                                           │
-                           7. PRODUCTION QA                │
-                           ┌─────────────┐                 │
-                           │ • Live      │◀────────────────┘
-                           │   Monitoring│
-                           │ • Continuous│
-                           │   Learning  │
-                           └─────────────┘
+```python
+class ReceiptDetails(BaseModel):
+    merchant: str | None
+    location: Location
+    time: str | None
+    items: list[LineItem]
+    subtotal: str | None
+    tax: str | None
+    total: str | None
+    handwritten_notes: list[str]
+
+class AuditDecision(BaseModel):
+    not_travel_related: bool    # Non-travel = needs audit
+    amount_over_limit: bool     # >$50 = needs audit
+    math_error: bool           # Math wrong = needs audit
+    handwritten_x: bool        # "X" marks = needs audit
+    reasoning: str
+    needs_audit: bool          # ANY violation = True
 ```
 
-### Core Components
+## Key Functions
 
-#### 1. **Evaluation Framework** 📊
-- **Test Case Management**: Organize and execute test scenarios
-- **Metric Calculation**: Accuracy, quality, consistency measurements
-- **Automated Scoring**: AI-powered response evaluation
-- **Historical Tracking**: Performance trends over time
+```python
+# Core processing
+async def extract_receipt_details(image_path: str, model: str = "gpt-4o-mini") -> ReceiptDetails
+async def evaluate_receipt_for_audit(receipt_details: ReceiptDetails, model: str = "gpt-4o-mini") -> AuditDecision
+
+# Evaluation
+async def evaluate_extraction_quality(predicted: ReceiptDetails, ground_truth: ReceiptDetails) -> EvaluationResult
+async def evaluate_multi_step_pipeline(image_path, ground_truth_receipt, ground_truth_audit) -> MultiStepEvaluationResult
+
+# Dataset creation
+async def create_evaluation_record(image_path: Path, model: str) -> EvaluationRecord
+async def create_dataset_content(receipt_image_dir: Path, model: str) -> list[dict]
+```
 
 #### 2. **Development Pipeline** 🔄
 - **Version Management**: Track prompt iterations and improvements
@@ -307,25 +304,6 @@ consistency_threshold = 0.6   # 60% consistency
 - Version management and rollback
 - Scalable architecture for high-volume usage
 
-## 🔮 Advanced Features
-
-### Production Monitoring
-- Real-time performance metrics
-- Automated anomaly detection
-- A/B testing framework
-- Performance degradation alerts
-
-### Custom Metrics
-- Domain-specific evaluation criteria
-- Business KPI integration
-- User satisfaction scoring
-- Cost optimization tracking
-
-### Deployment Automation
-- CI/CD pipeline integration
-- Automated testing gates
-- Blue-green deployments
-- Canary releases
 
 ## 📝 Running the Demo
 

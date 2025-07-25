@@ -132,3 +132,20 @@ checkpoints/
 *_output.html
 *_report.html
 *_analysis.html
+
+# Archive files
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tar.bz2
+
+# Eval-driven development cache
+.persist_cache/
+*.persist_cache
+
+# Dataset files (large files with long paths)
+data/
+datasets/
+*.dataset
