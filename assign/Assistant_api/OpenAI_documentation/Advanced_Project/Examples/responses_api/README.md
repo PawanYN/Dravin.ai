@@ -15,13 +15,13 @@ A collection of advanced OpenAI API projects focusing on response analysis, prom
 **Description:** Production-ready framework demonstrating eval-driven development from prototype to production. Implements receipt processing with image extraction, business rule evaluation, and systematic quality assessment.
 
 **Key Features:**
-- Receipt image → structured data extraction
-- 4-criteria audit decision system (travel/non-travel, amount limits, math validation, handwritten notes)
-- Multi-step evaluation framework (extraction quality + decision logic + end-to-end)
-- Three grader types: string_check, text_similarity, score_model
-- Business impact analysis with cost/ROI calculations
-- Real dataset integration (Roboflow receipt handwriting detection)
-- OpenRouter API integration for cost-effective development
+- ✅ Receipt image → structured data extraction
+- ✅ 4-criteria audit decision system (travel/non-travel, amount limits, math validation, handwritten notes)
+- ✅ Multi-step evaluation framework (extraction quality + decision logic + end-to-end)
+- ✅ Three grader types: string_check, text_similarity, score_model
+- ✅ Business impact analysis with cost/ROI calculations
+- ✅ Real dataset integration (Roboflow receipt handwriting detection)
+- ✅ OpenRouter API integration for cost-effective development
 
 **Use Case:** Automates manual receipt review workflows, reducing $5/receipt human review cost to $2-3 automated processing with 80%+ accuracy.
 
@@ -36,6 +36,14 @@ A collection of advanced OpenAI API projects focusing on response analysis, prom
 - [`Prompt_Optimization_README.md`](./Prompt_Optimization_README.md) - Documentation
 
 **Description:** Systematic approach to prompt improvement using evaluation metrics and iterative refinement.
+
+**Key Features:**
+- ✅ Iterative development with automated improvement
+- ✅ Multi-metric evaluation system (accuracy, quality, consistency)
+- ✅ Stage-based progression (Prototype → Development → Staging → Production)
+- ✅ AI-powered prompt optimization based on evaluation results
+- ✅ Historical performance tracking and analytics
+- ✅ Automated testing and continuous integration
 
 ---
 
@@ -75,6 +83,22 @@ A collection of advanced OpenAI API projects focusing on response analysis, prom
 
 ---
 
+### 📄 [Qdrant Integration](./Qdrant.md)
+
+**Vector database integration patterns**
+
+**Description:** Implementation patterns for integrating Qdrant vector database with OpenAI APIs.
+
+---
+
+### 📋 [Summary](./Summary.md)
+
+**Project summaries and overviews**
+
+**Description:** Comprehensive summaries of all projects and their key learnings.
+
+---
+
 ## Getting Started
 
 1. **Install Dependencies:**
@@ -91,21 +115,32 @@ A collection of advanced OpenAI API projects focusing on response analysis, prom
    ```bash
    python Eval_Driven_System_Design.py
    python Optimize_Prompts.py
-   # etc.
+   python Reasoning_items.py
+   python responses_api_tool_orchestration.py
    ```
 
 ## Project Structure
 
 ```
 responses_api/
-├── README.md                           # This file
-├── requirements.txt                    # Dependencies
-├── Eval_Driven_System_Design.py       # Main eval-driven project
-├── Eval_Driven_System_Design_README.md # Developer reference
-├── data/                              # Receipt dataset
-│   ├── train/test/valid/              # Images
-│   └── ground_truth/                  # Labels
-└── [other projects...]
+├── README.md                                    # This file
+├── requirements.txt                             # Dependencies
+├── .gitignore                                   # Git ignore patterns
+├── Eval_Driven_System_Design.py                # Eval-driven development framework
+├── Eval_Driven_System_Design_README.md         # Eval-driven documentation
+├── Optimize_Prompts.py                         # Prompt optimization framework
+├── Prompt_Optimization_README.md               # Prompt optimization docs
+├── Prompt_Migration_Guide.md                   # API migration guide
+├── Prompt_Migration_Guide_Refactored.py        # Migration examples
+├── Multi_tool_Orchestration.md                 # Tool orchestration patterns
+├── Reasoning_items.py                          # Reasoning implementations
+├── responses_api_tool_orchestration.py         # Tool coordination
+├── Qdrant.md                                   # Vector database integration
+├── Summary.md                                  # Project summaries
+├── data/                                       # Dataset files (gitignored)
+│   ├── train/test/valid/                       # Receipt images
+│   └── ground_truth/                           # Expert labels
+└── [output files...]                           # Generated reports
 ```
 
 ## Key Learnings
@@ -115,6 +150,7 @@ responses_api/
 - **Business-aligned metrics** connect technical performance to real-world impact
 - **Structured outputs** with Pydantic enable reliable data processing
 - **Cost optimization** through model selection and prompt engineering
+- **Iterative improvement** through automated evaluation and optimization
 
 ## Dependencies
 
